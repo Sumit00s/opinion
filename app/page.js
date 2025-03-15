@@ -2,7 +2,7 @@ import { getOpinions } from "./_lib/data_service";
 import OpinionsList from "./_components/OpinionsList";
 import CreatePost from "./_components/CreatePost";
 import { FilterDropdown } from "./_components/FilterDropdown";
-import { Heading1 } from "lucide-react";
+import RefreshNotification from "./_components/RefreshNotification";
 
 export default async function Home({ searchParams }) {
   // Fetch all opinions
@@ -28,6 +28,8 @@ export default async function Home({ searchParams }) {
         {opinions.length == 0 ? <h1 className="text-center font-bold text-white text-2xl">No Opinions Yet...</h1> : <OpinionsList opinions={opinions} />}
         <CreatePost />
       </div>
+
+      <RefreshNotification />
     </div>
   );
 }
