@@ -118,3 +118,20 @@ export async function DeleteOpinion(id) {
 
    return data;
 }
+
+export async function searchOpinions(query) {
+    if (!query) return [];
+
+    // Fetch opinions where the name contains the search query (case-insensitive)
+    const { data, error } = await supabase
+        .from("opinions")
+        .select("*")
+        .ilike("name", `%${query}%`); // Case-insensitive partial match
+
+    if (error) {
+        console.error("Error fetching search results:", error.message);
+        return [];
+    }
+
+    return data;
+}

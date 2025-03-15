@@ -9,7 +9,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu } from "lucide-react";
+import { Menu, Search } from "lucide-react";
+import Link from "next/link";
 
 export function FilterDropdown() {
   const router = useRouter();
@@ -27,12 +28,15 @@ export function FilterDropdown() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="fixed cursor-pointer top-20 left-10 -translate-x-1/2 p-2 bg-black border font-bold text-2xl rounded-full mt-2 z-10">
-          <Menu />
+          <Search/>
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-30 ml-12 mt-8 text-white bg-black border" align="end">
         <DropdownMenuLabel>Filter</DropdownMenuLabel>
         <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <Link href='/search'>Search Name</Link>
+        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleFilterChange("all")}>
           All
         </DropdownMenuItem>
