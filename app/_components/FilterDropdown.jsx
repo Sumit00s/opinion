@@ -37,10 +37,10 @@ export function FilterDropdown() {
           All
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleFilterChange("most-liked")}>
-          Most 👍
+          Most Like
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleFilterChange("most-disliked")}>
-          Most 👎
+          Most Dislike
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
