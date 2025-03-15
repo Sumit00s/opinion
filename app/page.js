@@ -2,14 +2,12 @@ import { getOpinions } from "./_lib/data_service";
 import OpinionsList from "./_components/OpinionsList";
 import CreatePost from "./_components/CreatePost";
 import { FilterDropdown } from "./_components/FilterDropdown";
+import { Heading1 } from "lucide-react";
 
 export default async function Home({ searchParams }) {
   // Fetch all opinions
   let opinions = await getOpinions();
 
-  if(opinions.length == 0) {
-    return <h1>No Opinions Yet...</h1>
-  }
 
   // Extract filter from URL
   const filter = searchParams.filter || "all";
@@ -27,7 +25,7 @@ export default async function Home({ searchParams }) {
       <FilterDropdown />
 
       <div className="mt-10 w-full mx-auto">
-        <OpinionsList opinions={opinions} />
+        {opinions.length == 0 ? <h1 className="text-center font-bold text-white text-2xl">No Opinions Yet...</h1> : <OpinionsList opinions={opinions} />}
         <CreatePost />
       </div>
     </div>
