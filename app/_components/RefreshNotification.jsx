@@ -9,7 +9,7 @@ export default function RefreshNotification() {
     const interval = setInterval(() => {
       setShow(true);
       setTimeout(() => setShow(false), 5000); // Hide after 5 sec
-    }, 20000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);

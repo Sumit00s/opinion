@@ -105,3 +105,16 @@ export async function createPost(formData) {
 
    revalidatePath(`/`)
 }
+
+export async function DeleteOpinion(id) {
+   let {data,error} = await supabase.from('opinions').delete().eq('id',id);
+
+   if(error){
+    console.log("Error while deleting data from admin panel");
+    throw new Error("Post cannot get deleted");
+   }
+
+   revalidatePath('/admin');
+
+   return data;
+}
