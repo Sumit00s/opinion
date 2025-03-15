@@ -81,9 +81,9 @@ import Link from "next/link";
             {/* Message Textarea */}
             <div>
               <textarea
-                maxLength={100}
+                maxLength={150}
                 className="w-full px-3 py-2 mt-1 bg-black border border-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Write your Opinion (max 100 characters)"
+                placeholder="Write your Opinion (max 150 characters)"
                 required
                 rows={5}
                 name="message"
