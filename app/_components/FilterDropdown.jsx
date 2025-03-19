@@ -31,7 +31,7 @@ export function FilterDropdown() {
           <Search/>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-30 ml-12 mt-8 text-white bg-black border" align="end">
+      <DropdownMenuContent className="w-30 ml-12 mt-2 text-white bg-black border" align="end">
         <DropdownMenuLabel>Filter</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>

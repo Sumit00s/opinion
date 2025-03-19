@@ -22,8 +22,8 @@ import Link from "next/link";
     return (
       <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
         <AlertDialogTrigger asChild>
-          <button onClick={() => setIsOpen(true)} className="fixed cursor-pointer bottom-10 right-0 -translate-x-1/2 p-4 bg-blue-800 font-bold text-2xl rounded-full mt-2 z-10">
-            💭
+          <button onClick={() => setIsOpen(true)} className="fixed cursor-pointer bottom-10 right-0 -translate-x-1/2 p-4 bg-blue-800 font-bold text-xl rounded-full mt-2 z-10">
+            Create💭
           </button>
         </AlertDialogTrigger>
         <AlertDialogContent className="bg-black text-white w-[350px] p-5 rounded-lg flex-col">
@@ -92,7 +92,10 @@ import Link from "next/link";
   
             {/* Footer: Cancel & Submit Button */}
             <AlertDialogFooter className='sm:flex-col-reverse'>
-                <AlertDialogCancel className=" cursor-pointer w-full border-black bg-red-800 hover:bg-red-600 text-white py-2 rounded-md">
+                <AlertDialogCancel
+                  className="cursor-pointer w-full border-red-800 bg-red-800 hover:bg-red-600 text-white py-2 rounded-md"
+                  onClick={() => setIsOpen(false)}
+                >
                   Cancel
                 </AlertDialogCancel>
 
