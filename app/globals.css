@@ -4,6 +4,35 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html, body {
+  height: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.fancy-grid {
+  min-height: 100vh;
+  position: relative;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(0, 255, 128, 0.2);
+  transform: scale(1.05);
+}
+
+.hover\:shadow-neonGreen:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.7);
+}
+
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -38,6 +67,31 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.6), transparent);
+  filter: blur(100px);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.6), transparent);
+  filter: blur(100px);
+  z-index: -1;
+}
+
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -117,6 +171,42 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+@keyframes randomGradient {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 0% 50%; }
+  100% { background-position: 100% 0%; }
+}
+
+.animate-random-gradient {
+  background-size: 200% 200%;
+  animation: randomGradient 5s infinite linear;
+}
+
+/* 🎨 Moving Grid Background */
+.fancy-grid {
+  background-color: black;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveGrid 6s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🎬 Animation */
+@keyframes moveGrid {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 50px 50px;
   }
 }
 

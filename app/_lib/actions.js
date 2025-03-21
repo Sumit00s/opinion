@@ -106,6 +106,35 @@ export async function createPost(formData) {
    revalidatePath(`/`)
 }
 
+export async function getPostById(id) {
+    const {data,error} = await supabase.from('opinions').select('*').eq('id',id);
+    if(error) throw new Error(`Could Not Find Post : ${id}`)
+    return data;
+}
+
+export async function getCommentsByPostId(id) {
+    const {data,error} = await supabase.from('comments').select('*').eq('post_id',id).order('id',{ascending:false})
+    if(error) throw new Error(`Cound Not Find Comments of Post ${id}`)
+    return data;
+}
+
+export async function createComment(formData) {
+    const newComment = {
+        post_id: Number(formData.get('id')),
+        comment: formData.get('comment')
+    };
+
+    const { data, error } = await supabase.from('comments').insert([newComment]);
+
+    if (error) {
+        console.error("Supabase Insert Error:", error);
+        throw new Error("Comment could not be created");
+    }
+
+    revalidatePath(`/post/${Number(formData.get('id'))}`);
+}
+
+
 export async function DeleteOpinion(id) {
    let {data,error} = await supabase.from('opinions').delete().eq('id',id);
 

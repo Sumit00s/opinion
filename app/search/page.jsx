@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { searchOpinions } from "../_lib/actions";
 import OpinionsList from "../_components/OpinionsList";
+import { Search } from "lucide-react";
 
 export default function SearchPage() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -23,19 +24,21 @@ export default function SearchPage() {
         <div className="max-w-lg mx-auto mt-10 p-4 text-white">
             <h1 className="text-2xl font-bold text-center">Search Opinions</h1>
 
-            <div className="flex gap-2 mt-4">
+            {/* Input and Button Wrapper */}
+            <div className="flex gap-2 mt-4 items-center">
                 <input
                     type="text"
                     placeholder="Enter name..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full p-2 text-white bg-black rounded border border-gray-300"
+                    className="w-full p-4 rounded-full text-white bg-black border border-gray-300"
                 />
                 <button 
                     onClick={handleSearch} 
-                    className="bg-blue-600 px-4 py-2 rounded text-white cursor-pointer"
+                    className="bg-blue-600 rounded-full px-6 py-4 text-white cursor-pointer h-full  bg-gradient-to-r from-purple-700 via-pink-700 to-blue-800 
+                        animate-random-gradient shadow-lg shadow-black"
                 >
-                    Search
+                    <Search/>
                 </button>
             </div>
 
