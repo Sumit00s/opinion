@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Opinion 🗣️  
+Anonymous Feedback Platform for Students
 
-## Getting Started
+**Opinion** is a fully anonymous feedback platform built specifically for college students to share their thoughts about faculty, peers, or campus experiences—without revealing their identity. Designed for transparency and honesty, it enables feedback collection without any authentication barrier.
+🚀 Originally built for **DY Patil Institute of Technology, Pimpri, Pune**, the platform gained quick traction with **2.1K+ visits** and **8.6K+ API requests** within just 3 days of launch.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+✨ Fully anonymous feedback submission  
+🔐 No login or authentication required  
+📈 Achieved 2.1K visits and 8.6K AI requests in just 3 days  
+🏫 Built for students of Dr. D.Y. Patil Institute of Technology, Pimpri, Pune  
+🎨 Clean, responsive UI with modern aesthetics
+
+---
+
+## 🛠 Tech Stack
+
+| Technology   | Description                                 |
+|--------------|---------------------------------------------|
+| Next.js      | Full-stack React framework                  |
+| Supabase     | Backend-as-a-service with real-time database |
+| Tailwind CSS | Utility-first CSS framework                 |
+| shadcn/ui    | Accessible, customizable UI components      |
+
+---
+
+## 📦 Getting Started
+
+### 📦 Project Setup
+
+To get started with **Opinion** locally, follow these steps:
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/opinion.git
+cd opinion
+
+# 2. Install dependencies
+npm install
+
+# 3. Create and configure your .env.local file
+# Add the following environment variable:
+
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+
+# 4. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
